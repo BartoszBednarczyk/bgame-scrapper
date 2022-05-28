@@ -1,6 +1,7 @@
 var express = require("express");
 const cheerio = require("cheerio");
 const axios = require("axios");
+var cors = require('cors')
 
 const AXIOS_OPTIONS = {
     headers: {
@@ -10,6 +11,7 @@ const AXIOS_OPTIONS = {
   };
 
 var app = express();
+app.use(cors());
 var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
